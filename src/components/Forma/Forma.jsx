@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Forma.css";
+import CheckIcon from "./CheckIcon";
 
 const Forma = ({ onPay }) => {
     const [playerId, setPlayerId] = useState("");
@@ -49,14 +50,27 @@ const Forma = ({ onPay }) => {
             </div>
 
             {/* ИНФА */}
-            <div className="form-info">
-                <div className="info-item">✅ Для всех регионов 🌍</div>
-                <div className="info-item">✅ Без передачи аккаунта 🛡️</div>
-                <div className="info-item">✅ Выгодно 💸</div>
-                <div className="info-item">✅ Круглосуточно ⏰</div>
-                <div className="info-item">✅ Кэшбек 💰</div>
-                <div className="info-item highlight">⚡ Моментальная доставка</div>
-            </div>
+	    <div className="form-info">
+    		<div className="info-item">
+        		<CheckIcon /> Для всех регионов 🌍
+    		</div>
+    		<div className="info-item">
+        		<CheckIcon /> Без передачи аккаунта 🛡️
+    		</div>
+    		<div className="info-item">
+        		<CheckIcon /> Выгодно 💸
+    		</div>
+    		<div className="info-item">
+        		<CheckIcon /> Круглосуточно ⏰
+    		</div>
+    		<div className="info-item">
+        		<CheckIcon /> Кэшбек 💰
+    		</div>
+    		<div className="info-item">
+        		<CheckIcon /> Моментальная доставка ⚡
+    		</div>
+	    </div>
+
 
             <div className="form-checkbox">
                 <label>
