@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./ProductsCatalog.css";
 import { products } from "./productsData";
+import Forma from "../Forma/Forma";
 
 const ProductsCatalog = () => {
     const [cart, setCart] = useState(() => {
         const savedCart = localStorage.getItem("gameStoreCart");
         return savedCart ? JSON.parse(savedCart) : [];
     });
+
+    const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("gameStoreCart", JSON.stringify(cart));
@@ -60,6 +63,40 @@ const ProductsCatalog = () => {
             setCart([]);
         }
     };
+
+    const handlePay = (formData) => {
+    	if (cart.length === 0) {
+        	alert("Корзина пуста");
+        	return;
+    	}
+
+    	const order = {
+        	form: formData,
+        	cart,
+        	total: calculateTotal()
+    	};
+	
+    	console.log("ORDER:", order);
+
+    	alert("Заказ создан (заглушка)");
+
+    	// тут потом платежка
+    };
+
+
+    const handleCheckout = (formData) => {
+    	if (cart.length === 0) {
+        	alert("Корзина пуста");
+        	return;
+    	}
+
+    	console.log("Данные формы:", formData);
+    	console.log("Корзина:", cart);
+    	console.log("Итого:", calculateTotal(), "₽");
+
+    	alert("Форма заполнена корректно. Переход к оплате (заглушка)");
+    };
+
 
     // Получение иконки в виде текстового символа (временно)
     const getIcon = (iconType) => {
@@ -177,12 +214,18 @@ const ProductsCatalog = () => {
                             <span>Итого:</span>
                             <span className="total-amount">{calculateTotal()} ₽</span>
                         </div>
-                        <button className="buy-btn">
-                            Перейти к оплате
-                        </button>
+			<button
+    				className="buy-btn"
+    				onClick={() => setShowForm(true)}
+			>
+    				Перейти к оплате
+			</button>
+
                     </div>
                 )}
             </div>
+	    {/* Форма */}
+	    {showForm && <Forma onPay={handlePay} />}
         </div>
     );
 };
