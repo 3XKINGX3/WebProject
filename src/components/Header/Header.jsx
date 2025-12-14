@@ -18,7 +18,7 @@ const Header = () => {
             id: 1, 
             name: 'Mobile Legends: Bang Bang', 
             icon: '📱', 
-            logo: '/WebProject/MLBB.png', // ← ИЗМЕНЕНО
+            logo: 'MLBB.png', // ← БЕЗ точки
             currency: 'Алмазы',
             description: 'Мгновенное пополнение алмазов в Мобайл Легенд по ID. Любые пропуска и удвоение первой покупки.',
             info: 'Алмазы — внутриигровая премиальная валюта в Mobile Legends Bang Bang, которая необходима для покупки героев и открытия новых костюмов.'
@@ -27,7 +27,7 @@ const Header = () => {
             id: 2, 
             name: 'League of Legends', 
             icon: '⚔️', 
-            logo: '/WebProject/LOL.png', // ← ИЗМЕНЕНО
+            logo: 'LOL.png', // ← БЕЗ точки
             currency: 'RP',
             description: 'Мгновенное пополнение RP в League of Legends по ID. Любые скины и чемпионы.',
             info: 'RP (Riot Points) — премиальная валюта в League of Legends для покупки скинов, чемпионов и другого контента.'
@@ -36,7 +36,7 @@ const Header = () => {
             id: 3, 
             name: 'PUBG MOBILE', 
             icon: '🎯', 
-            logo: '/WebProject/PUBG.png', // ← ИЗМЕНЕНО
+            logo: 'PUBG.png', // ← БЕЗ точки
             currency: 'UC',
             description: 'Мгновенное пополнение UC в PUBG MOBILE по ID. Любые скины и оружия.',
             info: 'UC (Unknown Cash) — премиальная валюта в PUBG MOBILE для покупки кейсов, скинов и предметов в игре.'
@@ -62,7 +62,7 @@ const Header = () => {
         <header className="header">
             <div className="header-video-container">
                 <video autoPlay loop muted playsInline>
-                    <source src="/WebProject/Video.mp4" type="video/mp4" /> {/* ← ИЗМЕНЕНО */}
+                    <source src="Video.mp4" type="video/mp4" /> {/* ← БЕЗ точки */}
                 </video>
                 <div className="header-video-overlay"></div>
             </div>
@@ -72,7 +72,7 @@ const Header = () => {
                     <div className="site-brand">
                         <div className="logo-container">
                             <img 
-                                src="/WebProject/LOGO.png" // ← ИЗМЕНЕНО
+                                src="LOGO.png" // ← БЕЗ точки
                                 alt="Mobpay" 
                                 className="site-logo"
                                 onError={(e) => {
