@@ -1,5 +1,5 @@
 .header {
-    width: 100%;
+    width: 100vw;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
     background: linear-gradient(135deg, #0a0a1a 0%, #0f172a 100%);
